@@ -401,23 +401,23 @@ def gather_json():
         'test': None
     }
 
-    with open('/home/qlc/raid/dataset/Brats2023/ag/modality_imputation_train.json', 'r') as f:
+    with open('./modality_imputation_train.json', 'r') as f:
         train = json.load(f)
         
-    with open('/home/qlc/raid/dataset/Brats2023/ag/modality_imputation_val.json', 'r') as f:
+    with open('./modality_imputation_val.json', 'r') as f:
         val = json.load(f)
         
-    with open('/home/qlc/raid/dataset/Brats2023/ag/modality_imputation_test.json', 'r') as f:
+    with open('./modality_imputation_test.json', 'r') as f:
         test = json.load(f)
         
     data['train'] = train
     data['val'] = val
     data['test'] = test
 
-    with open('/home/qlc/raid/dataset/Brats2023/ag/modality_imputation.json', 'w') as f:
+    with open('./modality_imputation.json', 'w') as f:
         json.dump(data, f, indent=4)
         
-    with open('/home/qlc/raid/dataset/Brats2023/ag/modality_imputation.json', 'r') as f:
+    with open('./modality_imputation.json', 'r') as f:
         train = json.load(f)
         
     print(train.keys())
@@ -425,12 +425,12 @@ def gather_json():
 
     
 def main(data_root=None, data_dest=None, json_dest=None, json_name=None):
-    data_root = '/home/qlc/raid/dataset/Brats2023/Adult_Glioma/TrainingData'
-    data_dest = '/home/qlc/raid/dataset/Brats2023/ag'
-    json_dest = '/home/qlc/raid/dataset/Brats2023/ag'
+    data_root = './Brats2023/Adult_Glioma/TrainingData'
+    data_dest = './Brats2023/ag'
+    json_dest = './Brats2023/ag'
     json_name = 'ag_train_val_test.json'
     
-    # split_dataset(data_root, dest=json_dest, json_name=json_name)
+    split_dataset(data_root, dest=json_dest, json_name=json_name)
     
     with open(os.path.join(json_dest, json_name), 'r') as f:
         data = json.load(f)
