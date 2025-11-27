@@ -23,8 +23,11 @@ We use [split_brats_2d.py](./split_brats_2d.py) to build a 2D dataset from the B
 
 
 \-- BraTS 2023
+
 \----- Adult_Glioma
+
 \---------- TrainingData
+
 \---------- ValidationData
 
 
